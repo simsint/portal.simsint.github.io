@@ -51,7 +51,7 @@
                     <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;16&quot;,&quot;fontStyle&quot;:&quot;bold&quot;,&quot;fontFamily&quot;:&quot;Nunito, sans-serif&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
                 </div>
                 <div class="mt-5">
-                    <div class="table-responsive" id="survey-table">
+                    <div class="table-responsive forms" id="survey-table">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -62,7 +62,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td class="text-right"><button class="btn btn-primary btn-sm px-4 mx-2" id="prefBtn" type="button" onclick="nextPrev(-1)">Previous</button><button class="btn btn-primary btn-sm px-4 mx-2" id="nextBtn" type="button" onclick="nextPrev(1)">Next</button></td>
+                                    <td class="text-right"><button class="btn btn-primary btn-sm px-4 mx-2" id="prevBtn" type="button" onclick="nextPrev(-1)">Previous</button><button class="btn btn-primary btn-sm px-4 mx-2" id="nextBtn" type="button" onclick="nextPrev(1)">Next</button></td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -112,11 +112,11 @@
     } else {
       document.getElementById("nextBtn").style.display = "inline";
       document.getElementById("nextBtn").innerHTML = "Next";
-      document.getElementById("skipBtn").disabled = false;
+      // document.getElementById("skipBtn").disabled = false;
     }
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n);
-    $("#questions").animate(
+    $("html").animate(
       {
         scrollTop: 0,
       },

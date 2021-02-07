@@ -51,9 +51,12 @@
                     <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;16&quot;,&quot;fontStyle&quot;:&quot;bold&quot;,&quot;fontFamily&quot;:&quot;Nunito, sans-serif&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
                 </div>
                 <div class="mt-5">
-                    <div class="table-responsive forms" id="survey-table">
-                        <table class="table">
+                    <div class="table-responsive table-borderless forms" id="survey-table">
+                        <table class="table table-bordered">
                             <tbody>
+                                <tr>
+                                    <td class="text-right"><button class="btn btn-primary btn-sm px-4" id="skipBtn" type="button" onclick="nextPrev(1)">Skip</button></td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <form id="filledSurvey" class="p-3 overflow-auto h-100" style="pointer-events: none;"></form>

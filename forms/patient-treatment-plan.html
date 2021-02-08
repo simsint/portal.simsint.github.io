@@ -28,7 +28,7 @@
                     <hr>
                     <div class="row">
                         <div class="col">
-                            <form id="patient-treatment-form" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="patient_treatment_plan">
+                            <form id="forms" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="patient_treatment_plan">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -468,25 +468,15 @@
                                     <div class="col-12">
                                         <div class="form-group input-group"><label>Diagnostic :&nbsp;</label><textarea class="form-control border-0 notes" rows="4"></textarea></div>
                                     </div>
-                                    <div class="col">
-                                        <div class="form-group input-group"><label>Number OF SESSIONS :&nbsp;</label><input class="form-control border-bottom-1" type="text"></div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group"><label>Number OF SESSIONS :&nbsp;</label><input class="form-control border-bottom-1 rounded-0" type="text"></div>
                                         <div class="form-group"><label>PATIENT / GUARDIAN SIGNATURE :&nbsp;</label>
-                                            <div id="signature-1">
-                                                <div class="wrapper"><input class="form-control d-none" type="text" id="signature-input-1" name="patient.guardian.signature"><canvas class="signature border" id="signature-canvas-1" height="200" style="width:100%">
-</canvas></div>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle m-1" data-toggle="tooltip" data-bs-tooltip="" id="upload-sign-1" type="button" title="upload signature"><i class="fa fa-cloud-upload"></i></button></li>
-                                                    <li
-                                                        class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle" data-toggle="tooltip" data-bs-tooltip="" id="sign-lock-1" type="button" title="lock signature"><i class="fa fa-unlock-alt"></i></button></li>
-                                                        <li
-                                                            class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle m-1" data-toggle="tooltip" data-bs-tooltip="" id="clear-1" type="button" title="clear"><i class="fa fa-remove"></i></button></li>
-                                                </ul><input type="file" id="file-upload-1" class="d-none"></div>
                                             <div class="sign-wrapper">
                                                 <div id="signature-pad-1" class="signature-pad">
                                                     <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                                     <p class="text-center text-muted">Sign above</p>
-                                                    <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="patient.guardian.signature">
-                                                    <ul class="list-inline signature-pad-actions">
+                                                    <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="acknowledgement_signature">
+                                                    <ul class="list-inline signature-pad-actions mb-0">
                                                         <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                                         <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
                                                         <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
@@ -496,19 +486,21 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div id="signature-2">
-                                            <div class="wrapper"><input class="form-control d-none" type="text" id="signature-input-2" name="doctor_signature"><canvas class="signature border" id="signature-canvas-2" height="200" style="width:100%">
-</canvas>
-                                                <p class="text-right d-xl-flex justify-content-xl-end align-items-xl-end pr-5">Dr. Ahmed Alnajjar</p>
+                                    <div class="col-lg-6">
+                                        <div class="sign-wrapper">
+                                            <div id="signature-pad-2" class="signature-pad">
+                                                <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                                                <p class="text-center text-muted">Sign above</p>
+                                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                                <ul class="list-inline signature-pad-actions mb-0">
+                                                    <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                                    <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                                    <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                                    <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                                                </ul>
                                             </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle m-1" data-toggle="tooltip" data-bs-tooltip="" id="upload-sign-2" type="button" title="upload signature"><i class="fa fa-cloud-upload"></i></button></li>
-                                                <li
-                                                    class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle" data-toggle="tooltip" data-bs-tooltip="" id="sign-lock-2" type="button" title="lock signature"><i class="fa fa-unlock-alt"></i></button></li>
-                                                    <li
-                                                        class="list-inline-item"><button class="btn btn-outline-primary btn-lg border rounded-circle m-1" data-toggle="tooltip" data-bs-tooltip="" id="clear-2" type="button" title="clear"><i class="fa fa-remove"></i></button></li>
-                                            </ul><input type="file" id="file-upload-2" class="d-none"></div>
+                                        </div>
+                                        <p class="text-right mr-3">Dr. Ahmed Alnajjar</p>
                                     </div>
                                 </div>
                                 <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="submit">Submit</button></div>
@@ -535,6 +527,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/theme.min.js"></script>
+    <script src="../assets/js/script-1.min.js"></script>
 </body>
 
 </html>

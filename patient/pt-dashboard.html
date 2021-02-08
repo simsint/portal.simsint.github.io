@@ -40,7 +40,7 @@
         </div>
     </nav>
     <section class="sections view-user-reports d-none">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="user-report-list">
                     <li class="p-3 text-white text-uppercase mb-1 d-none" style="background-color: #b5b5b5;" data-action="show-user-report" data-created="">2020-01-10 10:30 AM</li>
@@ -82,18 +82,18 @@
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9 h-100">
-                <div id="user-report-data" class="mt-2"></div><iframe id="user-report-iframe" class="" src="" width="100%" style="border:none;overflow:hidden" onload="resizeIframe(this)" allowTransparency="true"></iframe> </div>
+                <div id="user-report-data" class="mt-2"></div><iframe id="user-report-iframe" class="" src="" width="100%" style="border:none;overflow:hidden" allowTransparency="true"></iframe> </div>
         </div>
     </section>
     <section class="sections view-visit-details d-none">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="visit-details-list">
                     <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="" data-created=""><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9" style="height: 500px;">
-                <div id="visit-detail" class="mt-2"></div><iframe id="visit-detail-iframe" class="" src="" width="100%"  style="overflow:hidden" onload="resizeIframe(this)" allowTransparency="true"></iframe> </div>
+                <div id="visit-detail" class="my-3 p-3"></div><iframe id="visit-detail-iframe" class="" src="" width="100%" onload="resizeIframe(this)"  style="overflow:hidden" allowTransparency="true"></iframe> </div>
         </div>
     </section><script>
   var currentTab = 0; // Current tab is set to be the first tab (0)

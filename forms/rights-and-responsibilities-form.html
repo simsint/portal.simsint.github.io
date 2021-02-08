@@ -26,9 +26,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col">
-                            <form id="rights-and-responsibilities-form" method="post" autocomplete="off" style="color: #000;padding: 0rem 10rem;"><input class="form-control d-none" type="text" name="form_type" value="rights_and_responsibilities_form">
+                            <form id="forms" class="forms mx-lg-5" method="post" autocomplete="off" style="color: #000;"><input class="form-control d-none" type="text" name="form_type" value="rights_and_responsibilities_form">
                                 <h4 class="text-center my-5">Rights and Responsibilities</h4>
-                                <ol class="text-justify my-5" style="line-height: 1.5rem;">
+                                <ol class="text-justify" style="line-height: 1.5rem;">
                                     <li>The Center is committed to provide all information in its possession and potential for improvement of your condition.</li>
                                     <li>The Center requires you to follow-up and implementation of all obligations or instructions provided by including rules and without prejudice to the assets and the the performance of the consulting profession.</li>
                                     <li>Commitment to provide the correct information about your effective manner will contribute to the process of diagnosing your condition.</li>
@@ -42,15 +42,44 @@
                                     <li>Please do not consider the failure of the center treating for you only when you comply with the therapeutic program on least the first stage (roughly a month).</li>
                                 </ol>
                                 <div class="form-row mb-5">
-                                    <div class="col"></div>
-                                    <div class="col"><label class="col-form-label">Signature for reading and knowledge</label></div>
+                                    <div class="col-lg-6 offset-lg-6">
+                                        <div class="form-group"><label>Signature for reading and knowledge</label>
+                                            <div class="sign-wrapper">
+                                                <div id="signature-pad-1" class="signature-pad">
+                                                    <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                                                    <p class="text-center text-muted">Sign above</p>
+                                                    <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="acknowledgement_signature">
+                                                    <ul class="list-inline signature-pad-actions mb-0">
+                                                        <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col">
-                                        <div class="form-group input-group"><label>Date :</label><input class="form-control border-0" type="date"></div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group input-group"><label>Date :</label><input class="form-control datepicker-here border-bottom-1 rounded-0"></div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group input-group"><label>Signature :</label></div>
+                                        <div class="form-group"><label>Signature :</label>
+                                            <div class="sign-wrapper">
+                                                <div id="signature-pad-2" class="signature-pad">
+                                                    <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                                                    <p class="text-center text-muted">Sign above</p>
+                                                    <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                                    <ul class="list-inline signature-pad-actions mb-0">
+                                                        <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                                        <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="submit">Submit</button></div>
@@ -75,6 +104,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/script-1.min.js"></script>
 </body>
 
 </html>

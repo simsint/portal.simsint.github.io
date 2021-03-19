@@ -35,6 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="#" data-action="visit-details">Visit Details</a></li>
                     <li class="nav-item"><a class="nav-link action" data-action="user-reports" href="#">User Reports</a></li>
                     <li class="nav-item"><a class="nav-link action" href="#" data-action="view-forms">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link action" href="#" data-action="view-treatment-plan">Treatment Plan</a></li>
                 </ul>
             </div>
         </div>
@@ -75,14 +76,15 @@
         </div>
     </section>
     <section class="sections view-forms d-none">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3 pr-0">
                 <ul class="list-unstyled mt-1" id="forms-list">
                     <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="view-form" data-created="" data-form-type=""><span class="d-block mb-1 text-uppercase font-weight-bold">Form name</span><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9 h-100">
-                <div id="user-report-data" class="mt-2"></div><iframe id="user-report-iframe" class="" src="" width="100%" style="border:none;overflow:hidden" allowTransparency="true"></iframe> </div>
+                <div id="user-report-data" class="mt-2"></div>
+            </div>
         </div>
     </section>
     <section class="sections view-visit-details d-none">
@@ -93,7 +95,20 @@
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9" style="height: 500px;">
-                <div id="visit-detail" class="my-3 p-3"></div><iframe id="visit-detail-iframe" class="" src="" width="100%" onload="resizeIframe(this)"  style="overflow:hidden" allowTransparency="true"></iframe> </div>
+                <div id="visit-detail" class="my-3 p-3"></div><iframe id="visit-detail-iframe" class="" src="" width="100%" style="border:none;overflow:hidden" allowTransparency="true"></iframe> </div>
+        </div>
+    </section>
+    <section class="sections view-treatment-plan d-none">
+        <div class="row no-gutters">
+            <div class="col py-4">
+                <form id="forms" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="treatment_plan">
+                    <div class="form-row" id="patient-treatment-plan-tables"></div>
+                    <div class="form-row">
+                        <div class="col text-right" style="font-size: 3rem;"><i class="fa fa-plus-circle text-primary" id="add-treatment-table" style="cursor: pointer;" onclick="addPatientTreatmentTable()"></i></div>
+                    </div>
+                    <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="button" onclick="submitForms(this)">Save</button></div>
+                </form>
+            </div>
         </div>
     </section><script>
   var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -193,6 +208,51 @@
     }
   }
 </script>
+<template id="patient-treatment-plan-session">
+  <div class="col-sm-12 col-md-6 col-lg-4 session">
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="table-warning" colspan="4">
+              <div class="form-group">
+                <p class="session_no">Ses #1</p>
+                <label>Date Time</label
+                ><input
+                  class="form-control datetime datetimepicker-here"
+                  name="section_date_1"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr class="table-danger">
+            <td>Sesn</td>
+            <td>Ins</td>
+            <td>Dur.</td>
+            <td>Nurse</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<template id="patient-treatment-plan-session-device">
+  <tr>
+    <td class="table-secondary">
+      <select class="form-control treatment-devices device"></select>
+    </td>
+    <td class="table-dark">
+      <input class="form-control instrument" type="text" />
+    </td>
+    <td>
+      <input class="form-control duration" type="text" />
+    </td>
+    <td>
+      <input class="form-control nurse" type="text" />
+    </td>
+  </tr>
+</template>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -208,14 +268,16 @@
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="../assets/js/checklist.min.js"></script>
     <script src="../assets/js/config.min.js"></script>
+    <script src="../assets/js/script-1.min.js"></script>
     <script src="../assets/js/survey-content.min.js"></script>
     <script src="../assets/js/survey.min.js"></script>
     <script src="../assets/js/pt-dashboard.min.js"></script>
+    <script src="../assets/js/template.min.js"></script>
 </body>
 
 </html>

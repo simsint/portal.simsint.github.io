@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg==" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <style class="style"></style>
 </head>
@@ -92,13 +93,13 @@
                 <div class="modal-header">
                     <h4 class="modal-title">New User</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body">
-                    <form id="create-user">
-                        <div class="form-group"><label>Email</label><input class="form-control" type="email" required="" name="email"></div>
-                        <div class="form-group"><label>Phone Number</label><input class="form-control tel-phone-input" type="tel" id="new-user-phone" name="phone_number"></div>
-                        <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="given_name"></div>
-                        <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" name="middle_name"></div>
-                        <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="family_name"></div>
-                        <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" name="preferred_username"></div>
+                    <form id="create-user" autocomplete="off">
+                        <div class="form-group"><label>Email</label><input class="form-control" type="email" required="" name="email" autocomplete="off"></div>
+                        <div class="form-group"><label>Phone Number</label><input class="form-control tel-phone-input" type="tel" id="new-user-phone" name="phone_number" autocomplete="off"></div>
+                        <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="given_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" name="middle_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="family_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" name="preferred_username" autocomplete="off"></div>
                         <div class="form-group"><label>Nationality</label><br><select class="form-control countries-list" name="locale"></select></div>
                         <div class="form-group"><label>Date Of Birth</label><input class="form-control datepicker-here" type="date" name="birthdate"></div>
                         <div class="form-group"><label>Gender</label><br>
@@ -106,15 +107,55 @@
                             <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" value="female" name="gender"><label class="custom-control-label" for="formCheck-2">Female</label></div>
                             <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="gender" value="other"><label class="custom-control-label" for="formCheck-3">Other</label></div>
                         </div>
-                        <div class="form-group"><label>Emirates ID Front Photo</label><br><input type="file" name="emirates_id_front"></div>
                         <div class="form-group">
                             <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="send-invite" checked=""><label class="custom-control-label" for="send-invite">Send an Invitation to this new user?</label></div>
                             <div class="custom-control custom-control-inline custom-checkbox ml-4"><input class="custom-control-input" type="checkbox" id="send-invite-email" checked="" name="invite[0]" value="EMAIL"><label class="custom-control-label" for="send-invite-email">Email (default)</label></div>
                             <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="send-invite-sms" name="invite[1]" value="SMS"><label class="custom-control-label" for="send-invite-sms">SMS</label></div>
                         </div>
-                        <div class="form-group"><label>Temporary Password</label><input class="form-control pwd-strength" type="password" name="tempPassword"><label>Note: temporary password auto-generates if not supplied. Check to Send Invitation to temporary password to this user.&nbsp;</label></div>
+                        <div class="form-group"><label>Temporary Password</label><input class="form-control pwd-strength" type="text" name="tempPassword" autocomplete="off"><label>Note: temporary password auto-generates if not supplied. Check to Send Invitation to temporary password to this user.&nbsp;</label></div>
                         <p
                             class="error-msg border border-danger p-3 text-center text-danger d-none">Error</p><button class="btn btn-primary btn-block" type="submit">Create User</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="update-user-profile-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">New User</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form id="update-user" autocomplete="off"><input class="form-control d-none" type="text" name="sub">
+                        <div class="form-group"><label>Email</label><input class="form-control" type="email" required="" name="email" autocomplete="off" readonly=""></div>
+                        <div class="form-group"><label>Phone Number</label><input class="form-control tel-phone-input" type="tel" id="new-user-phone-1" name="phone_number" autocomplete="off"></div>
+                        <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="given_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" name="middle_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="family_name" autocomplete="off"></div>
+                        <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" name="preferred_username" autocomplete="off"></div>
+                        <div class="form-group"><label>Nationality</label><br><select class="form-control countries-list" name="locale"></select></div>
+                        <div class="form-group"><label>Date Of Birth</label><input class="form-control datepicker-here" type="date" name="birthdate"></div>
+                        <div class="form-group"><label>Gender</label><br>
+                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-7" name="gender" value="male"><label class="custom-control-label" for="formCheck-7">Male</label></div>
+                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-4" name="gender" value="female"><label class="custom-control-label" for="formCheck-4">Female</label></div>
+                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-5" name="gender" value="other"><label class="custom-control-label" for="formCheck-5">Other</label></div>
+                        </div>
+                        <div class="form-group"><label>Emirates&nbsp; ID Front Image</label><br/>
+                            <div class="text-center mt-2 image-cropper" id="emirates_id_front_preview" data-current-zoom="0"><input type="file" id="emirates_id_front_file" class="image-file-edit" name="custom:emirates_id_front" accept="image/*" data-preview="emirates_id_front_preview">
+                                <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
+                                    <li class="list-inline-item px-1 image-rotate-left" data-deg="90"><i class="fa fa-rotate-left"></i></li>
+                                    <li class="list-inline-item px-1 image-rotate-right" data-deg="-90"><i class="fa fa-rotate-right"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Emirates&nbsp; ID Back Image</label><br/>
+                            <div class="text-center mt-2 image-cropper" id="emirates_id_back_preview" data-current-zoom="0"><input type="file" id="emirates_id_back_file" class="image-file-edit" name="custom:emirates_id_back" accept="image/*" data-preview="emirates_id_back_preview">
+                                <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
+                                    <li class="list-inline-item px-1 image-rotate-left" data-deg="90"><i class="fa fa-rotate-left"></i></li>
+                                    <li class="list-inline-item px-1 image-rotate-right" data-deg="-90"><i class="fa fa-rotate-right"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="error-msg border border-danger p-3 text-center text-danger d-none">Error</p><button class="btn btn-primary btn-block" type="submit">Update Profile</button></form>
                 </div>
             </div>
         </div>
@@ -134,6 +175,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>

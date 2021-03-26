@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg==" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <style class="style"></style>
 </head>
@@ -66,6 +67,9 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#update-user-profile-modal">User Attributes Updates Modal</button></div>
+            </div>
             <div class="row m-2 py-3 small rounded shadow">
                 <div class="col-sm-auto text-center">
                     <picture style="width: 100px;"><img src="assets/img/user.svg" style="width: 100px;"></picture>
@@ -104,6 +108,40 @@
         </div>
     </div>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="update-user-profile-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form autocomplete="off">
+                    <div class="modal-header">
+                        <h4 class="modal-title">User Profile</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body">
+                        <div class="form-group"><label>Emirates&nbsp; ID Front Image</label><br/>
+                            <div class="text-center mt-2 image-cropper" id="emirates_id_front_preview" data-current-zoom="0"><input type="file" id="emirates_id_front_file" class="image-file-edit" name="custom:emirates_id_front" accept="image/*" data-preview="emirates_id_front_preview">
+                                <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
+                                    <li class="list-inline-item px-1 image-rotate-left" data-deg="90"><i class="fa fa-rotate-left"></i></li>
+                                    <li class="list-inline-item px-1 image-rotate-right" data-deg="-90"><i class="fa fa-rotate-right"></i></li>
+                                    <li class="list-inline-item px-1 image-flip-vertical"><i class="fa fa-arrows-v"></i></li>
+                                    <li class="list-inline-item px-1 image-flip-horizontal"><i class="fa fa-arrows-h"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Emirates&nbsp; ID Back Image</label><br/><input type="file" id="emirates_id_back_file" class="image-file-edit" name="custom:emirates_id_back" accept="image/*" data-preview="emirates_id_back_preview">
+                            <div
+                                class="text-center mt-2 image-cropper" id="emirates_id_back_preview" data-current-zoom="0">
+                                <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
+                                    <li class="list-inline-item px-1 image-rotate-left" data-deg="90"><i class="fa fa-rotate-left"></i></li>
+                                    <li class="list-inline-item px-1 image-rotate-right" data-deg="-90"><i class="fa fa-rotate-right"></i></li>
+                                    <li class="list-inline-item px-1 image-flip-vertical"><i class="fa fa-arrows-v"></i></li>
+                                    <li class="list-inline-item px-1 image-flip-horizontal"><i class="fa fa-arrows-h"></i></li>
+                                </ul>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+            </form>
+        </div>
+    </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
@@ -119,6 +157,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>

@@ -68,11 +68,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#update-user-profile-modal">User Attributes Updates Modal</button></div>
+                <div class="col"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#update-user-profile-modal">User Attributes Updates Modal</button><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#invoice-modal">Invoice Modal</button></div>
             </div>
             <div class="row m-2 py-3 small rounded shadow">
                 <div class="col-sm-auto text-center">
-                    <picture style="width: 100px;"><img src="assets/img/user.svg" style="width: 100px;"></picture>
+                    <picture>
+                        <source srcset="assets/img/user.svg 150w">
+                        <source srcset="assets/img/logo-telepsych.png 954w"><img src="assets/img/user.svg" style="width:100px"></picture>
                 </div>
                 <div class="col">
                     <div class="row">
@@ -86,13 +88,13 @@
                             <p class="mb-0"><strong>Nationality</strong>: UAE</p>
                             <p class="mb-0"><strong>Phone</strong>: +917389449375</p>
                             <p class="mb-0"><strong>Address</strong>: Address</p>
-                            <p class="mb-0"><strong>Emirates ID</strong>: 785-3854-2456</p><a class="btn btn-outline-primary btn-sm" href="#collapse-2" role="button" aria-expanded="true" aria-controls="collapse-2" data-toggle="collapse">View Emirates Card</a></div>
-                    </div>
-                </div>
-                <div class="col-auto align-self-center">
-                    <div class="dropdown show"><button class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true" type="button">Action</button>
-                        <div class="dropdown-menu show"><a class="dropdown-item" href="#" data-action="appointment">New Appointment</a><a class="dropdown-item" href="#" data-action="edit-profile">Edit Profile</a><a class="dropdown-item" href="#collapse-2" data-toggle="collapse" aria-expaneded="true"
-                                aria-controls="collapse-2" role="button">View Emirates Card</a></div>
+                            <p class="mb-0"><strong>Emirates ID</strong>: 785-3854-2456</p>
+                            <div class="dropdown show d-inline-block m-2"><button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true" type="button">Action</button>
+                                <div class="dropdown-menu show text-capitalize"><a class="dropdown-item" href="#" data-action="appointment">Patient Dashboard</a><a class="dropdown-item" href="#" data-action="appointment">New Appointment</a><a class="dropdown-item" href="#" data-action="edit-profile">Edit Profile</a>
+                                    <a
+                                        class="dropdown-item" href="#" data-action="edit-profile">Set Password</a><a class="dropdown-item" href="#" data-action="edit-profile">Resend Confirmation</a><a class="dropdown-item" href="#collapse-2" data-toggle="collapse" aria-expaneded="true" aria-controls="collapse-2"
+                                            role="button">View Emirates IDs</a></div>
+                            </div><a class="btn btn-outline-primary btn-sm m-2" href="#collapse-2" role="button" aria-expanded="true" aria-controls="collapse-2" data-toggle="collapse">View Emirates Card</a></div>
                     </div>
                 </div>
                 <div class="col-12 collapse show" id="collapse-2">
@@ -116,7 +118,7 @@
                         <h4 class="modal-title">User Profile</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                     <div class="modal-body">
                         <div class="form-group"><label>Emirates&nbsp; ID Front Image</label><br/>
-                            <div class="text-center mt-2 image-cropper" id="emirates_id_front_preview" data-current-zoom="0"><input type="file" id="emirates_id_front_file" class="image-file-edit" name="custom:emirates_id_front" accept="image/*" data-preview="emirates_id_front_preview" capture="user">
+                            <div class="text-center mt-2 image-cropper" id="emirates_id_front_preview" data-current-zoom="0"><input type="file" id="emirates_id_front_file" class="image-file-edit" name="custom:emirates_id_front" accept="image/*" data-preview="emirates_id_front_preview">
                                 <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
                                     <li class="list-inline-item px-1 image-rotate-left" data-deg="90"><i class="fa fa-rotate-left"></i></li>
                                     <li class="list-inline-item px-1 image-rotate-right" data-deg="-90"><i class="fa fa-rotate-right"></i></li>
@@ -125,7 +127,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="form-group"><label>Emirates&nbsp; ID Back Image</label><br/><input type="file" id="emirates_id_back_file" class="image-file-edit" name="custom:emirates_id_back" accept="image/*" data-preview="emirates_id_back_preview" capture="environment">
+                        <div class="form-group"><label>Emirates&nbsp; ID Back Image</label><br/><input type="file" id="emirates_id_back_file" class="image-file-edit" name="custom:emirates_id_back" accept="image/*" data-preview="emirates_id_back_preview">
                             <div
                                 class="text-center mt-2 image-cropper" id="emirates_id_back_preview" data-current-zoom="0">
                                 <ul class="list-inline d-inline-block bg-primary text-white rounded px-2 py-1">
@@ -141,6 +143,123 @@
             </form>
         </div>
     </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="invoice-modal">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">INVOICE</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body">
+                        <div class="form-row border rounded-lg p-2" style="border-color: --;">
+                            <div class="col-auto d-xl-flex justify-content-xl-center align-items-xl-center"><img src="assets/img/araa-consultancy-and-studies-logo%20-1.png" style="height: 150px;"></div>
+                            <div class="col">
+                                <h4 style="color: rgb(0,55,112);">ARAA Consultancy, Studies &amp; Training Center</h4>
+                                <hr>
+                                <p>Tel.: +971 4 294998 - Fax : +971 4 2949997 - P.O.Box : 13866 - Dubai - United Arab Emirates</p>
+                                <p>Mob: +971 56 174 1859 / +971 4 2949997 - P.O.Box : 13866 - Dubai - United Arab Emirates</p>
+                            </div>
+                        </div>
+                        <div class="form-row pt-5">
+                            <div class="col">
+                                <p><strong>Invoice No :</strong>&nbsp;000001</p>
+                                <p><strong>TRN :&nbsp;</strong>100346625500003</p>
+                                <div class="form-group"><label><strong>Mode of Payment :&nbsp;</strong></label><input class="form-control" type="text"></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label><strong>Date&nbsp;</strong></label><input class="form-control datepicker-here" type="text"></div>
+                                <div class="form-group"><label><strong>File No :&nbsp;</strong></label><input class="form-control" type="text"></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label><strong>Name :</strong></label><input class="form-control" type="text"></div>
+                            </div>
+                        </div>
+                        <div class="table-responsive table-bordered">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Amount</th>
+                                        <th>Tax Rate</th>
+                                        <th>Qty</th>
+                                        <th>Services</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label class="pr-5">Consultation Service</label>
+                                                <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" name="service_type" value="online"><label class="custom-control-label" for="formCheck-2">Online</label></div>
+                                                <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-1" name="service_type" value="walk-in"><label class="custom-control-label" for="formCheck-1">Label</label></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label>Follow Up Service</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label>Support Service</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label>Associate Service</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label>Health Report</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group"><label>Others</label></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td colspan="3">
+                                            <div class="form-group"><label><strong>Remarks&nbsp;</strong></label><textarea class="form-control" rows="5"></textarea></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td colspan="3">
+                                            <div class="form-group"><label><strong>Total&nbsp;</strong></label><input class="form-control" type="text"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-row"></div>
+                        <p class="text-center">Invoice generated digitally by <span style="border-bottom: 2px solid;">Telepsych</span>&nbsp;System - All Copyrights Reserved</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -158,6 +277,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js" integrity="sha512-d5Jr3NflEZmFDdFHZtxeJtBzk0eB+kkRXWFQqEc1EKmolXjHm2IKCA7kTvXBNjIYzjXfD5XzIjaaErpkZHCkBg==" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>

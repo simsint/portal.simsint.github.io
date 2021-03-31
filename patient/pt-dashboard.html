@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Telepsych+</title>
+    <title>Telepsych</title>
     <meta name="description" content="Admin Portal">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -32,11 +32,11 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" data-action="pt-dashbaord-home" href="#">Patient Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-action="visit-details">Visit Details</a></li>
-                    <li class="nav-item"><a class="nav-link action" data-action="user-reports" href="#">User Reports</a></li>
-                    <li class="nav-item"><a class="nav-link action" href="#" data-action="view-forms">Forms</a></li>
-                    <li class="nav-item"><a class="nav-link action" href="#" data-action="view-treatment-plan">Treatment Plan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-action="visit-details-section">Visit Details</a></li>
+                    <li class="nav-item"><a class="nav-link action" data-action="user-reports-section" href="#">User Reports</a></li>
+                    <li class="nav-item"><a class="nav-link action" href="#" data-action="forms-section">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link action" href="#" data-action="treatment-plan-section">Treatment Plan</a></li>
+                    <li class="nav-item"><a class="nav-link action" href="#" data-action="invoice-section">Invoice</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="user-report-list">
-                    <li class="p-3 text-white text-uppercase mb-1 d-none" style="background-color: #b5b5b5;" data-action="show-user-report" data-created="">2020-01-10 10:30 AM</li>
+                    <li class="previous-records" data-action="show-user-report" data-created="">2020-01-10 10:30 AM</li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9">
@@ -80,7 +80,7 @@
         <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3 pr-0">
                 <ul class="list-unstyled mt-1" id="forms-list">
-                    <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="view-form" data-created="" data-form-type=""><span class="d-block mb-1 text-uppercase font-weight-bold">Form name</span><span>Date tiime</span></li>
+                    <li class="previous-records" data-action="view-form" data-created="" data-form-type=""><span class="d-block mb-1 text-uppercase font-weight-bold">Form name</span><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9 h-100">
@@ -92,7 +92,7 @@
         <div class="row no-gutters">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="visit-details-list">
-                    <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="" data-created=""><span>Date tiime</span></li>
+                    <li class="previous-records" data-action="" data-created=""><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9" style="height: 500px;">
@@ -110,6 +110,173 @@
                     <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="button" onclick="submitForms(this)">Save</button></div>
                 </form>
             </div>
+        </div>
+    </section>
+    <section class="sections view-invoice d-none">
+        <div class="row no-gutters">
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <ul class="list-unstyled mt-1" id="invoice-list">
+                    <li class="previous-records d-none" date-action="view-invoice" data-created=""><span>Date Time</span></li>
+                </ul>
+            </div>
+            <div class="col">
+                <form id="invoice" class="px-2">
+                    <div class="form-row">
+                        <div class="col text-right"><button class="btn btn-primary btn-sm m-3" type="button" data-id="#invoice" data-action="print-invoice" onclick="$(&#39;#invoice&#39;).printThis();">Print</button><button class="btn btn-primary btn-sm m-3 action" type="button" data-action="new-invoice" onclick="newInvoice()">New</button></div>
+                    </div>
+                    <div class="form-row rounded-lg p-2" style="border: 2px solid var(--primary);">
+                        <div class="col-auto d-xl-flex justify-content-xl-center align-items-xl-center px-2"><img src="../assets/img/araa-consultancy-and-studies-logo%20-1.png" style="height: 150px;"></div>
+                        <div class="col px-2 mx-lg-5">
+                            <h4 style="color: rgb(0,55,112);">ARAA Consultancy, Studies &amp; Training Center</h4>
+                            <hr style="border-top-color: var(--primary);">
+                            <p>Tel.: +971 4 294998 - Fax : +971 4 2949997 - P.O.Box : 13866 - Dubai - United Arab Emirates</p>
+                            <p>Mob: +971 56 174 1859 / +971 4 2949997 - P.O.Box : 13866 - Dubai - United Arab Emirates</p>
+                        </div>
+                    </div>
+                    <div class="form-row pt-5">
+                        <div class="col-12 text-center">
+                            <h2 class="mb-3" style="border-bottom: 1px solid;display: inline-block;color: var(--primary);">Invoice</h2>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label><strong>Invoice No :&nbsp;</strong></label><input class="form-control input-no-edit" type="text" name="invoice_no"></div>
+                            <p><strong>TRN :&nbsp;</strong><span id="trn_no" name="trn_no">100346625500003</span></p>
+                            <div class="form-group"><label><strong>Mode of Payment :&nbsp;</strong></label><input class="form-control" type="text" name="mode_of_payment"></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label><strong>Date&nbsp;</strong></label><input class="form-control datepicker-here" type="text" name="date"></div>
+                            <div class="form-group"><label><strong>Consultant :&nbsp;</strong></label><input class="form-control" type="text" name="consultant"></div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group"><label><strong>Name :</strong></label><input class="form-control" type="text" name="name"></div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-bordered">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="min-width: 100px;">Amount</th>
+                                    <th style="min-width: 80px;">Tax Rate (5%)</th>
+                                    <th style="min-width: 80px;">Qty</th>
+                                    <th style="min-width: 200px;">Services</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input class="form-control" type="text" name="service.consultation.amount"></td>
+                                    <td><input class="form-control" type="text" name="service.consultation.tax"></td>
+                                    <td><input class="form-control" type="text" name="service.consultation.quantity"></td>
+                                    <td>
+                                        <div class="form-group"><label class="pr-5">Consultation Service</label>
+                                            <div class="custom-control custom-control-inline custom-checkbox" id="consultation-service" onclick="if ($(this).find(&#39;input&#39;).prop(&quot;checked&quot;)) {     $(&quot;.consultation-type&quot;).css(&quot;display&quot;, &quot;block&quot;);   } else {     $(&quot;.consultation-type&quot;).css(&quot;display&quot;, &quot;none&quot;);   }"><input class="custom-control-input" type="checkbox" id="formCheck-8" name="service_type[]" value="consultation"><label class="custom-control-label" for="formCheck-8"></label></div><br/>
+                                            <div
+                                                class="custom-control custom-control-inline custom-radio consultation-type"><input class="custom-control-input" type="radio" id="formCheck-2" name="service.consultation.type" value="online"><label class="custom-control-label" for="formCheck-2">Online</label></div>
+                                        <div class="custom-control custom-control-inline custom-radio consultation-type"><input class="custom-control-input" type="radio" id="formCheck-1" name="service.consultation.type" value="walk-in"><label class="custom-control-label" for="formCheck-1">Walk-in</label></div>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="text" name="service.follow_up.amount"></td>
+                        <td><input class="form-control" type="text" name="service.follow_up.tax"></td>
+                        <td><input class="form-control" type="text" name="service.follow_up.quantity"></td>
+                        <td>
+                            <div class="form-group"><label class="pr-4">Follow Up Service</label>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-3" name="service_type[]" value="follow_up_service"><label class="custom-control-label" for="formCheck-3"></label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="text" name="service.support.amount"></td>
+                        <td><input class="form-control" type="text" name="service.follow_up.tax"></td>
+                        <td><input class="form-control" type="text" name="service.follow_up.quantity"></td>
+                        <td>
+                            <div class="form-group"><label class="pr-4">Support Service</label>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-4" name="service_type[]" value="support_service"><label class="custom-control-label" for="formCheck-4"></label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="text" name="service.associate.amount"></td>
+                        <td><input class="form-control" type="text" name="service.associate.tax"></td>
+                        <td><input class="form-control" type="text" name="service.associate.quantity"></td>
+                        <td>
+                            <div class="form-group"><label class="pr-4">Associate Service</label>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input input-no-edit" type="checkbox" id="formCheck-5" name="service_type[]" value="associate_service"><label class="custom-control-label" for="formCheck-5"></label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="text" name="service.health_report.amount"></td>
+                        <td><input class="form-control" type="text" name="service.health_report.tax"></td>
+                        <td><input class="form-control" type="text" name="service.health_report.quantity"></td>
+                        <td>
+                            <div class="form-group"><label class="pr-4">Health Report</label>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-6" name="service_type[]" value="health_report"><label class="custom-control-label" for="formCheck-6"></label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="text" name="service.other.amount"></td>
+                        <td><input class="form-control" type="text" name="service.other.tax"></td>
+                        <td><input class="form-control" type="text" name="service.other.quantity"></td>
+                        <td>
+                            <div class="form-group"><label class="pr-4">Others</label>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-7" name="service_type[]" value="other"><label class="custom-control-label" for="formCheck-7"></label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+                            <div class="form-group"><label><strong>Remarks&nbsp;</strong></label><textarea class="form-control" rows="5" name="remarks"></textarea></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group"><label><strong>Total</strong></label><input class="form-control" type="text" name="total"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="form-group"><label><strong>Total&nbsp;</strong></label><input class="form-control" type="text" name="total_text"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+            <div class="form-row">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="sign-wrapper">
+                        <div id="signature-pad-1" class="signature-pad">
+                            <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                            <p class="text-center text-muted">Sign above</p>
+                            <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="customer_signature">
+                            <ul class="list-inline signature-pad-actions mb-0">
+                                <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                            </ul>
+                        </div>
+                    </div><label class="font-weight-bold">Customer Signature</label></div>
+                <div class="col">
+                    <div class="sign-wrapper">
+                        <div id="signature-pad-2" class="signature-pad">
+                            <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                            <p class="text-center text-muted">Sign above</p>
+                            <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="receiver_signature">
+                            <ul class="list-inline signature-pad-actions mb-0">
+                                <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                            </ul>
+                        </div>
+                    </div><label class="font-weight-bold">Receiver Signature</label></div>
+            </div>
+            <div class="form-row">
+                <div class="col text-right"><button class="btn btn-primary btn-sm" onclick="newInvoice()" type="button">Reset</button><button class="btn btn-primary btn-sm px-3 ml-3" type="button" data-action="submit-invoice" onclick="submitInvoice()">Save</button></div>
+            </div>
+            <p class="text-center">Invoice generated digitally by <span style="border-bottom: 2px solid;">Telepsych</span>&nbsp;System - All Copyrights Reserved</p>
+            </form>
+        </div>
         </div>
     </section><script>
   var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -271,6 +438,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js" integrity="sha512-d5Jr3NflEZmFDdFHZtxeJtBzk0eB+kkRXWFQqEc1EKmolXjHm2IKCA7kTvXBNjIYzjXfD5XzIjaaErpkZHCkBg==" crossorigin="anonymous"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="../assets/js/checklist.min.js"></script>

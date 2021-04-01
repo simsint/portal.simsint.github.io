@@ -120,10 +120,10 @@
                 </ul>
             </div>
             <div class="col">
-                <form id="invoice" class="px-2">
-                    <div class="form-row">
-                        <div class="col text-right"><button class="btn btn-primary btn-sm m-3" type="button" data-id="#invoice" data-action="print-invoice" onclick="$(&#39;#invoice&#39;).printThis();">Print</button><button class="btn btn-primary btn-sm m-3 action" type="button" data-action="new-invoice" onclick="newInvoice()">New</button></div>
-                    </div>
+                <div class="row">
+                    <div class="col text-right"><button class="btn btn-primary btn-sm m-3" type="button" data-id="#invoice" data-action="print-invoice" onclick="$(&#39;#invoice&#39;).printThis();">Print</button><button class="btn btn-primary btn-sm m-3 action" type="button" data-action="new-invoice" onclick="newInvoice()">New</button></div>
+                </div>
+                <form id="invoice" class="px-2" autocomplete="off">
                     <div class="form-row rounded-lg p-2" style="border: 2px solid var(--primary);">
                         <div class="col-auto d-xl-flex justify-content-xl-center align-items-xl-center px-2"><img src="../assets/img/araa-consultancy-and-studies-logo%20-1.png" style="height: 150px;"></div>
                         <div class="col px-2 mx-lg-5">
@@ -140,14 +140,18 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group"><label><strong>Invoice No :&nbsp;</strong></label><input class="form-control input-no-edit" type="text" name="invoice_no"></div>
                             <p><strong>TRN :&nbsp;</strong><span id="trn_no" name="trn_no">100346625500003</span></p>
-                            <div class="form-group"><label><strong>Mode of Payment :&nbsp;</strong></label><input class="form-control" type="text" name="mode_of_payment"></div>
+                            <div class="form-group"><label><strong>Mode of Payment : cash credit online&nbsp;&nbsp;</strong></label><br/>
+                                <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-9" name="mode_of_payment" value="cash"><label class="custom-control-label" for="formCheck-9">Cash</label></div>
+                                <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-10" name="mode_of_payment" value="credit_card"><label class="custom-control-label" for="formCheck-10">Credit Card</label></div>
+                                <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-11" name="mode_of_payment" value="online"><label class="custom-control-label" for="formCheck-11">Online</label></div>
+                            </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group"><label><strong>Date&nbsp;</strong></label><input class="form-control datepicker-here" type="text" name="date"></div>
-                            <div class="form-group"><label><strong>Consultant :&nbsp;</strong></label><input class="form-control" type="text" name="consultant"></div>
+                            <div class="form-group"><label><strong>Consultant :&nbsp;</strong></label><select class="form-control" name="consultant"><option value="Dr. Ahmed Al Najjar">Dr. Ahmed Al Najjar</option><option value="Dr. Sofiane">Dr. Sofiane</option></select></div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group"><label><strong>Name :</strong></label><input class="form-control" type="text" name="name"></div>
+                            <div class="form-group"><label><strong>Name :</strong></label><input class="form-control" type="text" id="pt-name" name="name"></div>
                         </div>
                     </div>
                     <div class="table-responsive table-bordered">
@@ -162,9 +166,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input class="form-control" type="text" name="service.consultation.amount"></td>
-                                    <td><input class="form-control" type="text" name="service.consultation.tax"></td>
-                                    <td><input class="form-control" type="text" name="service.consultation.quantity"></td>
+                                    <td><input class="form-control invoiceInputChange" type="text" name="service.consultation.amount"></td>
+                                    <td><input class="form-control invoiceInputChange" type="text" name="service.consultation.tax"></td>
+                                    <td><input class="form-control invoiceInputChange" type="text" name="service.consultation.quantity"></td>
                                     <td>
                                         <div class="form-group"><label class="pr-5">Consultation Service</label>
                                             <div class="custom-control custom-control-inline custom-checkbox" id="consultation-service" onclick="if ($(this).find(&#39;input&#39;).prop(&quot;checked&quot;)) {     $(&quot;.consultation-type&quot;).css(&quot;display&quot;, &quot;block&quot;);   } else {     $(&quot;.consultation-type&quot;).css(&quot;display&quot;, &quot;none&quot;);   }"><input class="custom-control-input" type="checkbox" id="formCheck-8" name="service_type[]" value="consultation"><label class="custom-control-label" for="formCheck-8"></label></div><br/>
@@ -175,39 +179,39 @@
                     </td>
                     </tr>
                     <tr>
-                        <td><input class="form-control" type="text" name="service.follow_up.amount"></td>
-                        <td><input class="form-control" type="text" name="service.follow_up.tax"></td>
-                        <td><input class="form-control" type="text" name="service.follow_up.quantity"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.follow_up.amount"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.follow_up.tax"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.follow_up.quantity"></td>
                         <td>
                             <div class="form-group"><label class="pr-4">Follow Up Service</label>
-                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-3" name="service_type[]" value="follow_up_service"><label class="custom-control-label" for="formCheck-3"></label></div>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-3" name="service_type[]" value="follow_up"><label class="custom-control-label" for="formCheck-3"></label></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><input class="form-control" type="text" name="service.support.amount"></td>
-                        <td><input class="form-control" type="text" name="service.follow_up.tax"></td>
-                        <td><input class="form-control" type="text" name="service.follow_up.quantity"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.support.amount"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.support.tax"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.support.quantity"></td>
                         <td>
                             <div class="form-group"><label class="pr-4">Support Service</label>
-                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-4" name="service_type[]" value="support_service"><label class="custom-control-label" for="formCheck-4"></label></div>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-4" name="service_type[]" value="support"><label class="custom-control-label" for="formCheck-4"></label></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><input class="form-control" type="text" name="service.associate.amount"></td>
-                        <td><input class="form-control" type="text" name="service.associate.tax"></td>
-                        <td><input class="form-control" type="text" name="service.associate.quantity"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.associate.amount"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.associate.tax"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.associate.quantity"></td>
                         <td>
                             <div class="form-group"><label class="pr-4">Associate Service</label>
-                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input input-no-edit" type="checkbox" id="formCheck-5" name="service_type[]" value="associate_service"><label class="custom-control-label" for="formCheck-5"></label></div>
+                                <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input input-no-edit" type="checkbox" id="formCheck-5" name="service_type[]" value="associate"><label class="custom-control-label" for="formCheck-5"></label></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><input class="form-control" type="text" name="service.health_report.amount"></td>
-                        <td><input class="form-control" type="text" name="service.health_report.tax"></td>
-                        <td><input class="form-control" type="text" name="service.health_report.quantity"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.health_report.amount"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.health_report.tax"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.health_report.quantity"></td>
                         <td>
                             <div class="form-group"><label class="pr-4">Health Report</label>
                                 <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-6" name="service_type[]" value="health_report"><label class="custom-control-label" for="formCheck-6"></label></div>
@@ -215,9 +219,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input class="form-control" type="text" name="service.other.amount"></td>
-                        <td><input class="form-control" type="text" name="service.other.tax"></td>
-                        <td><input class="form-control" type="text" name="service.other.quantity"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.other.amount"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.other.tax"></td>
+                        <td><input class="form-control invoiceInputChange" type="text" name="service.other.quantity"></td>
                         <td>
                             <div class="form-group"><label class="pr-4">Others</label>
                                 <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-7" name="service_type[]" value="other"><label class="custom-control-label" for="formCheck-7"></label></div>
@@ -232,44 +236,32 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="form-group"><label><strong>Total</strong></label><input class="form-control" type="text" name="total"></div>
+                            <div class="form-group"><label><strong>Total</strong></label><input class="form-control invoiceInputChange" type="text" name="total"></div>
                         </td>
                         <td colspan="3">
-                            <div class="form-group"><label><strong>Total&nbsp;</strong></label><input class="form-control" type="text" name="total_text"></div>
+                            <div class="form-group"><label><strong>Total&nbsp;</strong></label><input class="form-control invoiceInputChange" type="text" name="total_text"></div>
                         </td>
                     </tr>
                     </tbody>
                     </table>
             </div>
             <div class="form-row">
-                <div class="col-sm-12 col-lg-6">
-                    <div class="sign-wrapper">
-                        <div id="signature-pad-1" class="signature-pad">
-                            <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
-                            <p class="text-center text-muted">Sign above</p>
-                            <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="customer_signature">
-                            <ul class="list-inline signature-pad-actions mb-0">
-                                <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
-                            </ul>
-                        </div>
-                    </div><label class="font-weight-bold">Customer Signature</label></div>
                 <div class="col">
-                    <div class="sign-wrapper">
-                        <div id="signature-pad-2" class="signature-pad">
-                            <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
-                            <p class="text-center text-muted">Sign above</p>
-                            <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="receiver_signature">
-                            <ul class="list-inline signature-pad-actions mb-0">
-                                <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
-                                <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
-                            </ul>
-                        </div>
-                    </div><label class="font-weight-bold">Receiver Signature</label></div>
+                    <div class="form-group">
+                        <div class="sign-wrapper">
+                            <div id="signature-pad-1" class="signature-pad">
+                                <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
+                                <p class="text-center text-muted">Sign above</p>
+                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="receiver_signature">
+                                <ul class="list-inline signature-pad-actions mb-0">
+                                    <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
+                                    <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
+                                    <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
+                                    <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
+                                </ul>
+                            </div>
+                        </div><label class="font-weight-bold">Receiver Signature</label></div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="col text-right"><button class="btn btn-primary btn-sm" onclick="newInvoice()" type="button">Reset</button><button class="btn btn-primary btn-sm px-3 ml-3" type="button" data-action="submit-invoice" onclick="submitInvoice()">Save</button></div>

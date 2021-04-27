@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spin.js/4.1.0/spin.min.css" integrity="sha512-ssYEuK9Epo/48VIlBWTFosf1izrgGZqEMELJP+L7Clh0nvaOSTg87dM+Z8L+KKjrPdMbMvKYOOnzBOkNMhWFsg==" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 <style class="style"></style>
 </head>
@@ -46,7 +47,7 @@
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="user-report-list"></ul>
             </div>
-            <div class="col-sm-12 col-md-8 col-lg-9">
+            <div class="col-sm-12 col-md-8 col-lg-9 px-2 border">
                 <div>
                     <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;16&quot;,&quot;fontStyle&quot;:&quot;bold&quot;,&quot;fontFamily&quot;:&quot;Nunito, sans-serif&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
                 </div>
@@ -239,10 +240,10 @@
                         <div class="col">
                             <div class="form-group"><label>Signature :</label>
                                 <div class="sign-wrapper">
-                                    <div id="signature-pad-2" class="signature-pad">
+                                    <div class="signature-pad">
                                         <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                         <p class="text-center text-muted">Sign above</p>
-                                        <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="receiver_signature">
+                                        <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="receiver_signature">
                                         <ul class="list-inline signature-pad-actions mb-0">
                                             <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                             <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -432,10 +433,10 @@
                     <div class="col-lg-6">
                         <p>التوقيع:</p>
                         <div class="sign-wrapper">
-                            <div id="signature-pad-1" class="signature-pad">
+                            <div class="signature-pad">
                                 <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                 <p class="text-center text-muted">Sign above</p>
-                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
                                 <ul class="list-inline signature-pad-actions mb-0">
                                     <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -482,10 +483,10 @@
                     <div class="col">
                         <h6 class="text-capitalize font-weight-bold">Signature of the patient</h6>
                         <div class="sign-wrapper">
-                            <div id="signature-pad-1" class="signature-pad">
+                            <div class="signature-pad">
                                 <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                 <p class="text-center text-muted">Sign above</p>
-                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
                                 <ul class="list-inline signature-pad-actions">
                                     <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -502,10 +503,10 @@
                     <div class="col">
                         <h6 class="text-capitalize font-weight-bold">Witness Signature</h6>
                         <div class="sign-wrapper">
-                            <div id="signature-pad-2" class="signature-pad">
+                            <div class="signature-pad">
                                 <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                 <p class="text-center text-muted">Sign above</p>
-                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="witness_signature">
+                                <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="witness_signature">
                                 <ul class="list-inline signature-pad-actions">
                                     <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -526,7 +527,7 @@
             <div class="col-sm-12 col-md-3">
                 <ul class="list-unstyled mt-1" id="visit-details-list"></ul>
             </div>
-            <div class="col-sm-12 col-md-9" style="height: 500px;">
+            <div class="col-sm-12 col-md-9 px-2 border" style="height: 500px;">
                 <div id="visit-detail" class="my-3 p-3"></div>
                 <div class="row">
                     <div class="col text-right"><button class="btn btn-primary btn-sm m-3 action" type="button" data-action="new-invoice" onclick="patient.newVisitDetails()">New</button></div>
@@ -581,10 +582,10 @@
                         <div class="col">
                             <div class="form-group"><label class="font-weight-bold">Signature:</label>
                                 <div class="sign-wrapper">
-                                    <div id="signature-pad-1" class="signature-pad">
+                                    <div class="signature-pad">
                                         <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                         <p class="text-center text-muted">Sign above</p>
-                                        <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                        <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
                                         <ul class="list-inline signature-pad-actions mb-0">
                                             <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                             <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -619,11 +620,11 @@
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="invoice-list"></ul>
             </div>
-            <div class="col">
+            <div class="col px-2 border">
                 <div class="row">
                     <div class="col text-right"><button class="btn btn-primary btn-sm m-3" type="button" data-id="#invoice" data-action="print-invoice" onclick="jQuery(&#39;#invoice&#39;).print();">Print</button><button class="btn btn-primary btn-sm m-3 action" type="button" data-action="new-invoice" onclick="patient.newInvoice()">New</button></div>
                 </div>
-                <form id="invoice" class="px-2" autocomplete="off">
+                <form id="invoice" class="forms invoice" autocomplete="off">
                     <div class="form-row rounded-lg p-2" style="border: 2px solid var(--primary);">
                         <div class="col-auto d-xl-flex justify-content-xl-center align-items-xl-center px-2"><img src="../assets/img/araa-consultancy-and-studies-logo-1.png" style="height: 130px;"></div>
                         <div class="col text-center px-2 mx-lg-5">
@@ -764,15 +765,17 @@
                             <div id="signature-pad-1" class="signature-pad">
                                 <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                 <p class="text-center text-muted">Sign above</p>
-                                <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
-                                <ul class="list-inline signature-pad-actions mb-0">
+                                <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                <ul class="list-inline signature-pad-actions">
                                     <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="clear"><i class="fa fa-remove"></i></li>
                                     <li class="list-inline-item btn-primary" data-action="upload-signature"><i class="fa fa-upload"></i></li>
                                 </ul>
                             </div>
-                        </div><label class="font-weight-bold">Receiver Signature</label></div>
+                        </div>
+                        <p class="font-weight-bold text-black-50">Receiver Signature</p>
+                    </div>
                 </div>
             </div>
             <div class="form-row">
@@ -943,6 +946,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js" integrity="sha512-ngVIPTfUxNHrVs52hA0CaOVwC3/do2W4jUEJIufgZQicmY27iAJAind8BPtK2LoyIGiAFcOkjO18r5dTUNLFAw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.min.js" integrity="sha512-i8ERcP8p05PTFQr/s0AZJEtUwLBl18SKlTOZTH0yK5jVU0qL8AIQYbbG5LU+68bdmEqJ6ltBRtCxnmybTbIYpw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="../assets/js/checklist.min.js"></script>

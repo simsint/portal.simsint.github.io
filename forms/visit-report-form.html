@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spin.js/4.1.0/spin.min.css" integrity="sha512-ssYEuK9Epo/48VIlBWTFosf1izrgGZqEMELJP+L7Clh0nvaOSTg87dM+Z8L+KKjrPdMbMvKYOOnzBOkNMhWFsg==" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 <style class="style"></style>
 </head>
@@ -79,10 +80,10 @@
                                     <div class="col">
                                         <div class="form-group"><label class="font-weight-bold">Signature:</label>
                                             <div class="sign-wrapper">
-                                                <div id="signature-pad-1" class="signature-pad">
+                                                <div class="signature-pad">
                                                     <div class="signature-pad--body"><canvas width="830" height="466" style="touch-action: none;"></canvas></div>
                                                     <p class="text-center text-muted">Sign above</p>
-                                                    <p class="text-center text-danger signature-pad-1-error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
+                                                    <p class="text-center text-danger error-msg d-none">File Size too long re-upload file with file size less than 100Kb</p><input type="file" class="my-2 d-none"><input class="form-control d-none" type="text" name="signature">
                                                     <ul class="list-inline signature-pad-actions mb-0">
                                                         <li class="list-inline-item btn-primary" data-action="lock"><i class="fa fa-unlock-alt"></i></li>
                                                         <li class="list-inline-item btn-primary" data-action="undo"><i class="fa fa-rotate-left"></i></li>
@@ -118,6 +119,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.min.js" integrity="sha512-qw2bX9KUhi7HLuUloyRsvxRlWJvj0u0JWVegc5tf7qsw47T0pwXZIk1Kyc0utTH3NlrpHtLa4HYTVUyHBr9Ufg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.min.js" integrity="sha512-i8ERcP8p05PTFQr/s0AZJEtUwLBl18SKlTOZTH0yK5jVU0qL8AIQYbbG5LU+68bdmEqJ6ltBRtCxnmybTbIYpw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/script-1.min.js"></script>
 </body>

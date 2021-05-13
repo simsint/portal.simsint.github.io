@@ -161,6 +161,81 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="pt-report-modal">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Report</h4><button class="btn btn-primary ml-4" type="button" onclick="jQuery(&#39;#pt-report&#39;).print();">Print</button><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="table-responsive table-borderless print-template" id="pt-report" style="color: black;">
+                        <table class="table table-bordered">
+                            <thead class="page-header-space">
+                                <tr>
+                                    <th>
+                                        <div class="d-inline-block"><img class="d-block" src="assets/img/logo-telepsych.png" style="width: 80px;"><span class="font-weight-bold" style="color: var(--primary);">Telepsych<sup class="font-weight-bold text-success" style="font-size: 19px;">+</sup></span></div>
+                                        <div
+                                            class="float-right"><img class="d-block m-auto" src="assets/img/aara-consultancy-and-studies-4.png" style="width: 100px;/*max-width: 100px;*/"><span style="color: var(--primary);">Araa Consultancy &amp; Studies</span></div>
+                    </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <form id="report" class="forms pt-report">
+                                    <h4 class="text-capitalize text-center mb-3 border-bottom font-weight-bold">Telepsych Patient Report</h4>
+                                    <div class="form-row">
+                                        <div class="col-6"><label>Patient Name:</label><input class="form-control" type="text" name="name"></div>
+                                        <div class="col-6"><label>Patient Email:</label><input class="form-control" type="text" name="email"></div>
+                                        <div class="col-6"><label>Gender:</label><input class="form-control" type="text" name="gender"></div>
+                                        <div class="col-6"><label>DOB:</label><input class="form-control" type="text" name="birthdate"></div>
+                                        <div class="col-6"><label>EID:</label><input class="form-control" type="text" name="preferred_username"></div>
+                                        <div class="col-6"><label>Age:</label><input class="form-control" type="text" name="age"></div>
+                                        <div class="col-6"><label>Nationality</label><input class="form-control" type="text" name="locale"></div>
+                                        <div class="col-6"><label>Mobile No:</label><input class="form-control" type="text" name="phone_number"></div>
+                                    </div>
+                                    <h5 class="font-weight-bold my-3">Basic Information</h5>
+                                    <ul>
+                                        <li><label>Do You Consider Yourself A Comfortable Person And Never Worries Control You? :</label><input class="form-control" type="text" value="n/a" name="do_you_consider_yourself_a_comfortable_person_and_never_worries_control_you_?"></li>
+                                        <li><label>Are You Always On The Right Side And Your Decisions Never Go Wrong? :</label><input class="form-control" type="text" value="n/a" name="are_you_always_on_the_right_side_and_your_decisions_never_go_wrong_?"></li>
+                                        <li><label>Income Level :</label><input class="form-control" type="text" value="n/a" name="income_level"></li>
+                                        <li><label>Presence Of Parents :</label><input class="form-control" type="text" value="n/a" name="presence_of_parents"></li>
+                                        <li><label>Are You Always Full of Energy? :</label><input class="form-control" type="text" value="n/a" name="are_you_always_full_of_energy_?"></li>
+                                        <li><label>Have You Had Previous Reviews For The Same Problem :</label><input class="form-control" type="text" value="n/a" name="have_you_had_previous_reviews_for_the_same_problem"></li>
+                                        <li><label>Marital Status :</label><input class="form-control" type="text" value="n/a" name="marital_status"></li>
+                                        <li><label>Employment Status :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Have You Ever Lied? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Do You Have Ready Answers When People Talk To You All The Time :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Did You Take Psychological Medicine Before&nbsp;</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Address :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Can You Easily Turn A Bored Social Gathering To Be A Full Of Joy And Happiness? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Do You Like Mixing With People Always? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Do You Have Variety Of Hobbies? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>No Of Children :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Do You Always Make New Friends? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Education Level</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Would You Like The Sand Noise To Surround You Always? :</label><input class="form-control" type="text" value="n/a"></li>
+                                        <li><label>Number Of Brothers And Sisters :</label><input class="form-control" type="text" value="n/a"></li>
+                                    </ul><img id="pt-report-eidf" class="d-block m-auto mb-5" src="assets/img/eidf.jpg" style="max-width: 100%;">
+                                    <h5 class="font-weight-bold mt-5">Behavior Chart<span class="float-right">Submitted on:&nbsp;<input class="form-control" type="text" name="survey_date"></span></h5><canvas style="width:100%;height:auto" id="user-report-chart"></canvas></form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="page-footer-space">
+                                <p class="text-center font-weight-bold" style="color: var(--primary);">Copyrights&nbsp;<span class="text-danger">@</span>&nbsp;Telepsych<sup class="font-weight-bold text-success" style="font-size: 19px;">+</sup></p>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>

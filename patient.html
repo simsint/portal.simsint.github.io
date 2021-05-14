@@ -184,14 +184,20 @@
                                 <form id="report" class="forms pt-report">
                                     <h4 class="text-capitalize text-center mb-3 border-bottom font-weight-bold">Telepsych Patient Report</h4>
                                     <div class="form-row">
-                                        <div class="col-6"><label>Patient Name:</label><input class="form-control" type="text" name="name"></div>
-                                        <div class="col-6"><label>Patient Email:</label><input class="form-control" type="text" name="email"></div>
-                                        <div class="col-6"><label>Gender:</label><input class="form-control" type="text" name="gender"></div>
-                                        <div class="col-6"><label>DOB:</label><input class="form-control" type="text" name="birthdate"></div>
-                                        <div class="col-6"><label>EID:</label><input class="form-control" type="text" name="preferred_username"></div>
-                                        <div class="col-6"><label>Age:</label><input class="form-control" type="text" name="age"></div>
-                                        <div class="col-6"><label>Nationality</label><input class="form-control" type="text" name="locale"></div>
-                                        <div class="col-6"><label>Mobile No:</label><input class="form-control" type="text" name="phone_number"></div>
+                                        <div class="col"><label>Patient Name:</label><input class="form-control" type="text" name="name"></div>
+                                        <div class="col"><label>Patient Email:</label><input class="form-control" type="text" name="email"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col"><label>Gender:</label><input class="form-control" type="text" name="gender"></div>
+                                        <div class="col"><label>DOB:</label><input class="form-control" type="text" name="birthdate"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col"><label>EID:</label><input class="form-control" type="text" name="preferred_username"></div>
+                                        <div class="col"><label>Age:</label><input class="form-control" type="text" name="age"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col"><label>Nationality</label><input class="form-control" type="text" name="locale"></div>
+                                        <div class="col"><label>Mobile No:</label><input class="form-control" type="text" name="phone_number"></div>
                                     </div>
                                     <h5 class="font-weight-bold my-3">Basic Information</h5>
                                     <ul>
@@ -215,12 +221,11 @@
                                         <li><label>Education Level</label><input class="form-control" type="text" value="n/a"></li>
                                         <li><label>Would You Like The Sand Noise To Surround You Always? :</label><input class="form-control" type="text" value="n/a"></li>
                                         <li><label>Number Of Brothers And Sisters :</label><input class="form-control" type="text" value="n/a"></li>
-                                    </ul><img id="pt-report-eidf" class="d-block m-auto mb-5" src="assets/img/eidf.jpg" style="max-width: 100%;">
-                                    <h5 class="font-weight-bold mt-5">Behavior Chart<span class="float-right">Submitted on:&nbsp;<input class="form-control" type="text" name="survey_date"></span></h5><canvas style="width:100%;height:auto" id="user-report-chart"></canvas></form>
+                                    </ul><img id="pt-report-eidf" class="d-block m-auto mb-5" src="assets/img/eidf.jpg" style="width: auto;max-width: 100%;height: 225px;">
+                                    <h5 class="font-weight-bold mt-5">Behavior Chart<span class="float-right">Submitted on:&nbsp;<input class="form-control" type="text" name="survey_date"></span></h5>
+                                    <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false,&quot;reverse&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;16&quot;,&quot;fontStyle&quot;:&quot;bold&quot;,&quot;fontFamily&quot;:&quot;Nunito, sans-serif&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
+                                </form>
                             </td>
-                        </tr>
-                        <tr>
-                            <td></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -257,6 +262,7 @@
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/checklist.min.js"></script>
     <script src="assets/js/config.min.js"></script>
     <script src="assets/js/script-1.min.js"></script>
     <script src="assets/js/patients.min.js"></script>

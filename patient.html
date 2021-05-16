@@ -164,8 +164,8 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="pt-report-modal">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Report</h4><button class="btn btn-primary ml-4" type="button" onclick="jQuery(&#39;#pt-report&#39;).print();">Print</button><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-header no-print">
+                    <h4 class="modal-title">Report</h4><button class="btn btn-primary ml-4" type="button" onclick="window.print();">Print</button><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body">
                     <div class="table-responsive table-borderless print-template" id="pt-report" style="color: black;">
                         <table class="table table-bordered">
@@ -221,9 +221,11 @@
                                         <li><label>Education Level</label><input class="form-control" type="text" value="n/a"></li>
                                         <li><label>Would You Like The Sand Noise To Surround You Always? :</label><input class="form-control" type="text" value="n/a"></li>
                                         <li><label>Number Of Brothers And Sisters :</label><input class="form-control" type="text" value="n/a"></li>
-                                    </ul><img id="pt-report-eidf" class="d-block m-auto mb-5" src="assets/img/eidf.jpg" style="width: auto;max-width: 100%;height: 225px;">
-                                    <h5 class="font-weight-bold mt-5">Behavior Chart<span class="float-right">Submitted on:&nbsp;<input class="form-control" type="text" name="survey_date"></span></h5>
-                                    <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false,&quot;reverse&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;16&quot;,&quot;fontStyle&quot;:&quot;bold&quot;,&quot;fontFamily&quot;:&quot;Nunito, sans-serif&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
+                                    </ul><img id="pt-report-eidf" class="d-block m-auto mb-5" src="assets/img/eidf.jpg" style="width: auto;max-width: 100%;height: 250px;">
+                                    <div class="print-break">
+                                        <h5 class="font-weight-bold mt-5">Behavior Chart<span class="float-right">Submitted on:&nbsp;<input class="form-control" type="text" name="survey_date"></span></h5>
+                                        <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;label&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;data&quot;,&quot;backgroundColor&quot;:&quot;#dc3912&quot;,&quot;data&quot;:[&quot;59&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false,&quot;reverse&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;fontSize&quot;:&quot;14&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
+                                    </div>
                                 </form>
                             </td>
                         </tr>
